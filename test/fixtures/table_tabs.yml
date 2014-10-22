@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  date: 2014-10-21 15:20:42
+  paid_by: MyString
+
+two:
+  location: MyString
+  date: 2014-10-21 15:20:42
+  paid_by: MyString

@@ -1,0 +1,9 @@
+<%= form_for([@user, @tab]) do |f| %>
+<%= f.label :location %>
+<%= f.text_field :location %>
+<%= f.label :date %>
+<%= f.date_field :date %>
+<%= f.label :paid_by %>
+<%= f.text_field :paid_by %>
+<%= f.submit "save" %>
+<% end %>
