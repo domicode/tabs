@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021172718) do
+ActiveRecord::Schema.define(version: 20141022192450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,15 +24,26 @@ ActiveRecord::Schema.define(version: 20141021172718) do
     t.datetime "updated_at"
   end
 
-  create_table "user_tabs", force: true do |t|
+  create_table "tables", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "table_tabs_id"
+  end
+
+  add_index "tables", ["table_tabs_id"], name: "index_tables_on_table_tabs_id", using: :btree
+
+  create_table "user_tables", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "table_tab_id"
+    t.integer  "tables_id"
   end
 
-  add_index "user_tabs", ["table_tab_id"], name: "index_user_tabs_on_table_tab_id", using: :btree
-  add_index "user_tabs", ["user_id"], name: "index_user_tabs_on_user_id", using: :btree
+  add_index "user_tables", ["table_tab_id"], name: "index_user_tables_on_table_tab_id", using: :btree
+  add_index "user_tables", ["tables_id"], name: "index_user_tables_on_tables_id", using: :btree
+  add_index "user_tables", ["user_id"], name: "index_user_tables_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
