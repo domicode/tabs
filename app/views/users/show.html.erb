@@ -19,15 +19,24 @@
 <%= link_to 'Back', users_path %>
 <%= link_to 'create new table', new_user_table_path(@user) %>
 
-
-<p>
-  <% @user.tables.each do |table| %>
-    <%= table.name %><br>
-    <% table.table_tabs.each do |tab| %>
-      <%= tab.location %>
-      <%= tab.paid_by %>
-      <%= tab.date.to_date %><br>
-    <% end %>
-    <%= link_to 'create new tab for this table', new_table_table_tab_path(table) %><br><br>
-  <% end %>
-<p>
+<% @user.tables.each do |table| %>
+  <div class="card">
+      <div class="card-image">
+        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt="">
+      </div>
+      <div class="card-header">
+        <%= table.name %>
+      </div>
+      <div class="card-copy">
+        <% table.table_tabs.each do |tab| %>
+          <%= tab.location %>
+          <%= tab.paid_by %>
+          <%= tab.date.to_date %><br>
+        <% end %>
+      </div>
+      <div class="card-stats">
+        <%= link_to 'create new tab for this table', new_table_table_tab_path(table) %>
+      </div>
+    </div>
+  </div>
+<% end %>

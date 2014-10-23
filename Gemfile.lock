@@ -35,6 +35,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bourbon (3.2.3)
+      sass (~> 3.2)
+      thor
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -74,6 +77,9 @@ GEM
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    neat (1.5.1)
+      bourbon (>= 3.1)
+      sass (~> 3.2.19)
     oauth (0.4.7)
     oauth2 (0.9.4)
       faraday (>= 0.8, < 0.10)
@@ -170,9 +176,11 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
+  bourbon
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  neat
   pg
   pry-byebug
   pry-rails
