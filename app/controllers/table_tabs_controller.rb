@@ -7,16 +7,16 @@ class TableTabsController < ApplicationController
   end
 
   def new
-    @user = current_user
-    @tab = @user.table_tabs.new
+    @table = Table.find(params[:table_id])
+    @tab = @table.table_tabs.new
   end
 
   def create
-    @user = current_user
-    @tab = @user.table_tabs.create(table_tabs_params)
+    @table = Table.find(params[:table_id])
+    @tab = @table.table_tabs.create(table_tabs_params)
 
     if @tab.save
-      redirect_to @user
+      redirect_to current_user
     else
       render :new
     end

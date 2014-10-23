@@ -17,4 +17,17 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-<%= link_to 'create new tab', new_user_table_tab_path(@user) %>
+<%= link_to 'create new table', new_user_table_path(@user) %>
+
+
+<p>
+  <% @user.tables.each do |table| %>
+    <%= table.name %><br>
+    <% table.table_tabs.each do |tab| %>
+      <%= tab.location %>
+      <%= tab.paid_by %>
+      <%= tab.date.to_date %><br>
+    <% end %>
+    <%= link_to 'create new tab for this table', new_table_table_tab_path(table) %><br><br>
+  <% end %>
+<p>

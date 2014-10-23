@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
 
   resources :users do
-    resources :tables do
-      resources :table_tabs
-    end
+    resources :tables
+  end
+
+  resources :tables do
+    resources :table_tabs
   end
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  root to: 'users#show'
+  root to: 'sessions#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
