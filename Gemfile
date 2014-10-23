@@ -28,6 +28,10 @@ gem 'spring',        group: :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
+
+  # Debugger
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -38,6 +42,8 @@ end
 gem 'pg'
 
 gem 'sorcery'
+
+
 
 
 # Use ActiveModel has_secure_password
