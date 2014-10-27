@@ -15,9 +15,11 @@
   <%= @user.email %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-<%= link_to 'create new table', new_user_table_path(@user) %>
+<p>
+  <%= link_to 'edit user info', edit_user_path(@user) %><br>
+  <%= link_to 'create new table', new_user_table_path(@user) %>
+  <%= link_to 'logout', :logout, method: :post %>
+</p>
 
 <% @user.tables.each do |table| %>
   <div class="card">
