@@ -59,5 +59,5 @@ gem 'neat'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-#
+# some comment
 
